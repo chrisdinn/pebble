@@ -254,7 +254,7 @@ func (i *Iterator) findNextEntry(limit []byte) {
 
 		case InternalKeyKindMerge:
 			var valueMerger ValueMerger
-			valueMerger, i.err = i.merge(i.key, i.iterValue)
+			valueMerger, i.err = i.merge(key.UserKey, i.iterValue)
 			if i.err == nil {
 				i.mergeNext(key, valueMerger)
 			}
